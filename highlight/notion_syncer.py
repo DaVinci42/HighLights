@@ -1,5 +1,6 @@
 import itertools
 import operator
+import time
 from typing import List, Callable
 
 from notion.block import BasicBlock, Children, SubheaderBlock, DividerBlock, QuoteBlock
@@ -23,7 +24,10 @@ def render_page(page: BasicBlock,
 
     page.title = "Kindle Clippings"
     content.add_new("table_of_contents")
-    [book_render(content, cs) for cs in clipping_list]
+    for cs in clipping_list:
+        book_render(content, cs)
+        # try to avoid exceeding API limit
+        time.sleep(5)
     return page
 
 
