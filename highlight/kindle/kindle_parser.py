@@ -5,7 +5,7 @@ from typing import List, AnyStr
 
 from pytz import timezone
 
-from highlight.clipping import Clipping
+from highlight.kindle.clipping import Clipping
 
 CLIPPING_DIVIDER = "=========="
 
