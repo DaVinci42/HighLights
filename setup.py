@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name='highlight',
-    version='0.3',
-    packages=['highlight'],
+    version='0.4',
+    packages=['highlight', 'kindle', 'koreader'],
     url='https://github.com/DaVinci42/highlight',
     license='',
     author='Dan Xin',

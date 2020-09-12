@@ -1,5 +1,9 @@
 # Tools to manage clippings
 
+```shell script
+pip install git+https://github.com/DaVinci42/highlight.git
+```
+---
 - [x] Kindle
     - [x] Parse `My Clippings.txt` to `Clipping` type        
     - [x] Sync to Notion, with default or customized layout
