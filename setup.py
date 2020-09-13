@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='highlight',
     version='0.4',
-    packages=['highlight', 'kindle', 'koreader'],
+    packages=find_packages(),
     url='https://github.com/DaVinci42/highlight',
     license='',
     author='Dan Xin',

@@ -8,10 +8,11 @@ from lxml import html
 def parse_file(path: str) -> Tuple[str, List[str]]:
     with open(path) as f:
         tree = html.fromstring(f.read())
-        pattern = re.compile(r'(页码 (\d+) )?(.+)', re.DOTALL)
+        template = r"(页码 (\d+) )?([\s\S]+)"
         return (
             tree.xpath('//h2/text()')[0],
-            [pattern.findall(e)[0][2] for e in tree.xpath('//div[contains(@style, "12pt")]/span/text()')]
+            [re.search(template, c, re.MULTILINE).group(3) for c in
+             tree.xpath('//div[contains(@style, "12pt")]/span/text()')]
         )
 
 
